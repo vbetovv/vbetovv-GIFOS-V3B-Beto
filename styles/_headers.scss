@@ -1,0 +1,109 @@
+@media all and (min-width:1200px) {
+    .header-gifos {
+        margin-top: unset;
+        //   margin-bottom: 76px;
+        grid-template-columns: 156px auto 5fr 5fr 156px;
+        grid-template-rows: 90px;
+        grid-template-areas: ". logo search menu .";
+      
+    }
+
+   /*  .header-gifos>.sg-container-search{
+        grid-area: search;
+    } */
+
+    .logo {
+        width: 59.1px;
+        height: 59.1px;
+        background: url("../images/logo.svg");
+        background-repeat: no-repeat;
+        background-size: 59.1px;
+
+        .logotitle {
+            position: relative;
+            top: 24px;
+            left: 7px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .menuburger {
+        display: none;
+    }
+
+    .nav-gifos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ul-gifos {
+
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            height: unset; //calc(80vh-44px);
+            padding-left: unset;
+
+            @include themify($themes) {
+                background: unset;
+            }
+
+            .li-gifos {
+
+                align-items: center;
+                margin-top: unset;
+                height: unset;
+
+                .a-gifos {
+                    font-family: 'Montserrat';
+                    font-weight: bold;
+                    font-size: 13x;
+
+                    @include themify($themes) {
+                        color: tema($text);
+                    }
+
+                    letter-spacing: 0;
+                    text-align: center;
+
+                    &:hover {
+                        text-decoration: underline #5ED7C6 solid;
+
+                    }
+                }
+            }
+
+            .btn-create-gifos {
+                width: 54px;
+                height: 54px;
+                border-radius: 100%;
+
+                @include themify($themes) {
+                    color: tema($text);
+                    border: tema($border);
+                    background: tema($bg);
+                }
+
+                font-size: 16px;
+
+                &:hover {
+                    @include themify($themes) {
+                        background: tema($hover);
+                        color: tema($textBtn);
+
+                    }
+                }
+
+            }
+
+
+        }
+    }
+    #li-gifos-3{
+        display: flex;
+    }
+}

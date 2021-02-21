@@ -1,0 +1,130 @@
+@media all and (min-width: 768px) and (max-width:1199px) {
+
+    /******MODAL******/
+    .modal-content {
+        grid-template-columns: auto 458px auto;
+        grid-template-rows: 100px 335px 183px;
+        grid-template-areas: "modalH modalH modalH"
+            "modalPrev modalImg modalNext"
+            ". modalCap .";
+        grid-row-gap: 22px;
+        grid-column-gap: 25px;
+    }
+
+    .modal-btnprev {
+        grid-area: modalPrev;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 335px;
+    }
+
+    .modalImg {
+        height: 335px;
+
+        img {
+            width: 458px;
+            height: 335px;
+
+        }
+    }
+
+    .modal-btnnext {
+        grid-area: modalNext;
+        display: flex;
+        align-items: center;
+        height: 335px;
+    }
+
+    /******FIN MODAL******/
+    /**********search-trending-gifos**********/
+    .search-trending-gifos {
+        .stg-grid {
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(4, auto);
+
+            .stg-container-img {
+                width: 156px;
+                height: 120px;
+
+                img {
+                    width: 156px;
+                    height: 120px;
+                }
+            }
+        }
+    }
+
+    /**********FIN search-trending-gifos**********/
+    /**********TRENDING GIFOS**************/
+    .sec-tgs {
+        .p-tgs{
+            align-self: center;
+            width: 320px;
+        }
+        .div-tgs {
+            grid-template-columns: repeat( 3, auto);
+            grid-template-rows: 120px;
+            grid-template-areas: "prev gallery next";
+            grid-gap: 11px;
+            .btnprev {
+                grid-area: prev;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btnnext {
+                grid-area: next;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .div-gallery {
+                width: 490px;
+                height: 120px;
+
+            }
+
+            .li-slider {
+                min-width: 156px;
+                height: 120px;
+                margin-right: 11px;
+
+                .stg-container-img {
+                    width: 156px;
+                    height: 120px;
+
+                    img {
+                        width: 156px;
+                        height: 120px;
+                    }
+
+                }
+
+
+            }
+        }
+    }
+
+    /**********FIN TRENDING GIFOS**************/
+
+    footer {
+        height: 116px;
+        grid-template-columns: 22px auto 1fr auto 22px;
+        grid-template-rows: auto;
+        grid-template-areas: ". redsocial . copy .";
+        align-content: center;
+        .redsocial {
+            margin: unset;
+            flex-flow: row wrap;
+            .subredsocial {
+                margin-top: unset;
+            }
+        }
+
+        .pcopy {
+            margin-bottom: unset;
+        }
+    }
+}

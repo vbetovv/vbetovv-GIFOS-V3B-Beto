@@ -1,1 +1,4 @@
-# vbetovv-GIFOS-V3B-Beto
+# gifos
+Proyecto Gifos Acamica
+
+Beto Vazquez Proyecto

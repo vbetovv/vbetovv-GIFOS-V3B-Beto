@@ -1,0 +1,44 @@
+$color--ligth: #572EE5;
+
+//LIGHT
+$bg--light:#FFFFFF;
+$bg-trending--light: #F3F5F8;
+$border--light: 1px solid $color--ligth;
+$hover--light: $color--ligth;
+$text--light:$color--ligth;
+$closeModal--light: url(../images/close.svg);
+$borderTopBottom--light:5px solid $color--ligth;
+$face--light:url(../images/icon_facebook.svg);
+$twitter--light:url(../images/icon-twitter.svg);
+$instagram--light:url(../images/icon_instagram.svg);
+$burger--light:url(../images/burger.svg);
+$burger-close--light:url(../images/button-close.svg);
+$bgmenu--light:  rgba(87,46,229,0.90);
+$bg-line--light:$color--ligth;
+$camara--light:url(../images/camara.svg);
+$pelicula--light:url(../images/pelicula.svg);
+$searchLupa--light:url(../images/icon-search.svg);
+
+//DARK
+$bg--dark:#37383C;
+$bg-trending--dark:  #222326;
+$border--dark: 1px solid #FFFFFF;
+$hover--dark: #FFFFFF;
+$text--dark:#FFFFFF;
+$closeModal--dark: url(../images/close-modo-noct.svg);
+$borderTopBottom--dark:5px solid #FFFFFF;
+$face--dark:url(../images/icon_facebook_noc.svg);
+$twitter--dark:url(../images/icon_twitter_noc.svg);
+$instagram--dark:url(../images/icon_instagram_noc.svg);
+$burger--dark:url(../images/burger-modo-noct.svg);
+$burger-close--dark:url(../images/close-modo-noct.svg);
+$bgmenu--dark: #000000;
+$bg-line--dark:#FFFFFF;
+$camara--dark:url(../images/camara-modo-noc.svg);
+$pelicula--dark:url(../images/pelicula-modo-noc.svg);
+$searchLupa--dark:url(../images/icon-search-modo-noct.svg);
+
+//FUENTES
+$font-weight--regular: 400;
+$font-weight--semibold: 500;
+$font-weight--bold: 700;

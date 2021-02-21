@@ -1,0 +1,89 @@
+@media all and (min-width:1200px) {
+    .btnHover{
+        @include themify($themes){
+            background:tema($hover);
+            color: tema($textBtn);
+        }
+    }
+
+    .activeGifos {
+        background: #9CAFC3;
+    }
+
+
+    #imgIlustra {
+        width: 399px;
+        height: 190px;
+    }
+    .img-notfound {
+        margin-top: 109px;
+    }
+     .header-gifos>.sg-container-search{
+      grid-area: search;
+        justify-self:  center;
+        align-self: baseline;
+        margin-top: 25px;
+        width: 334px;
+        .ul-autocomplete {
+            width: 334px;
+        }
+        .gifos-header-search {
+                 width: 234px;
+        }
+        .sg-line-search {
+            width: 320px;
+        }
+        
+    } 
+    
+    .sg-container-search {
+
+        width: 551px;
+
+
+        @include themify($themes) {
+            background: tema($bg); 
+            border: tema($border); 
+        }
+
+        .sg-line-search {
+            width: 505px;
+        }
+
+        
+   
+    }
+    .gifos-header-search {
+        padding: 15px 54px 13px 25px;
+        width: 450px;
+    }
+
+    .ul-autocomplete {
+        width: 505px;
+    }
+
+
+    #stg-title{
+        margin-bottom: 60px;
+    }
+
+    footer {
+        height: 116px;
+        grid-template-columns: 156px auto 1fr auto 156px;
+        grid-template-rows: auto;
+        grid-template-areas: ". redsocial . copy .";
+        align-content: center;
+        .redsocial {
+            margin: unset;
+            flex-flow: row wrap;
+            .subredsocial {
+                margin-top: unset;
+            }
+        }
+
+        .pcopy {
+            margin-bottom: unset;
+        }
+    }
+
+}

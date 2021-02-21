@@ -1,0 +1,232 @@
+@media all and (min-width:1200px) {
+    .sec-create-gifos {
+        width: 100%;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        grid-template-columns: 1fr 688px 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "imgCam video imgCam2"
+            ". botones imgCam2"
+            "linea linea linea"
+            ". btnVideoAct .";
+    }
+
+    .div-img-container {
+        grid-area: imgCam;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .div-img-cam {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+        }
+
+        #imgCam {
+            width: 153px;
+            height: 192px;
+
+            @include themify($themes) {
+                content: tema($camara);
+            }
+        }
+
+        #luzImgCam {
+            width: 91px;
+            height: 151px;
+        }
+    }
+
+    #imgCam2 {
+        @include themify($themes) {
+            content: tema($pelicula);
+        }
+
+    }
+
+    .div-video-container {
+        grid-area: video;
+        width: 688px;
+        height: 390px;
+
+        @include themify($themes) {
+            border: tema($border);
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .div-video-gifos {
+            width: 648px;
+            height: 350px;
+            border: 1px solid #50E3C2;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+
+            .h1-video {
+                font-size: 25px;
+                text-align: center;
+                line-height: 35px;
+            }
+
+            .p-video {
+
+                font-size: 16px;
+                font-family: 'Roboto';
+                font-weight: 500;
+
+                @include themify($themes) {
+                    color: tema($text);
+                }
+
+                text-align: center;
+                line-height: 29px;
+            }
+
+            .sec-create-gifos-canvas-div {
+                display: grid;
+                grid-template-columns: 390px repeat(2, 45px);
+                grid-template-rows: 45px 137.5px 137.5px;
+                grid-template-areas: ". download copyurl""loadOk loadOk loadOk"" textOK textOK textOK";
+                position: relative;
+                top: -324px;
+                
+                z-index: 3;
+
+                .btn-download,
+                .btn-copy-url{
+                    border: 1px solid #CED7E1;
+                }
+
+                
+                .btn-download {
+                    margin-top: 10px;
+                    grid-area: download;
+                }
+
+                .btn-copy-url {
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    grid-area: copyurl;
+                }
+
+                #imgLoadOk{
+                    grid-area: loadOk;
+                   align-self: end;
+                   justify-self: center;
+                }
+
+                .p-gifos {
+                    grid-area: textOK;
+                    align-self: start;
+                    justify-self: center;
+                    color: white;
+                    font-family: 'Monserrat', sans-serif;
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: 15px;
+                }
+
+            }
+
+
+
+            .sec-create-gifos-videos,
+            .sec-create-gifos-canvas,
+            .sec-create-gifos-canvas-div,
+            .sec-create-gifos-canvas-cont {
+                width: 480px;
+                height: 320px;
+            }
+
+
+            .sec-create-gifos-canvas-up {
+                opacity: 0.5;
+                background: #572EE5;
+            }
+        }
+    }
+
+    .div-img-cam2 {
+        margin-left: 67px;
+        grid-area: imgCam2;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .div-botones {
+        grid-area: botones;
+        height: 75px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center;  */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: ". botones croncap";
+        justify-items: center;
+        align-content: center;
+    }
+
+    #pcronometro,
+    #repetircaptura {
+        grid-area: croncap;
+        justify-self: end;
+        align-self: center;
+        font-size: 13px;
+        font-family: 'Montserrat';
+        font-weight: 900;
+
+        @include themify($themes) {
+            color: tema($text);
+        }
+    }
+
+    #repetircaptura {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline #5ED7C6 solid;
+        }
+    }
+
+
+
+    .botoneraGifos {
+        grid-area: botones;
+
+        #btnvideo2 {
+            margin: 0px 26px 0px 26px;
+        }
+    }
+
+
+
+    .div-line-gifos {
+        grid-area: linea;
+        justify-self: center;
+        width: 796px;
+        height: 7px;
+
+        @include themify($themes) {
+            background: tema($bgLineGifos);
+        }
+    }
+
+    .div-btnvideo-gifos {
+        grid-area: btnVideoAct;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+}

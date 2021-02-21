@@ -1,0 +1,797 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    min-width: 320px;
+
+    @include themify($themes) {
+        background: tema($bg);
+    }
+}
+
+h1 {
+    font-size: 25px;
+    line-height: 33px;
+    width: 286px;
+
+    &::after {
+        content: 'GIFOS';
+        color: #5ED7C6;
+    }
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+
+    @include themify($themes) {
+        color: tema($text);
+    }
+
+    text-align: center;
+}
+
+p, #a-trending {
+    font-family: 'Montserrat';
+    font-weight: 500;
+
+    @include themify($themes) {
+        color: tema($text);
+    }
+
+    text-align: center;
+}
+
+
+#contenedor-principal {
+    @include themify($themes) {
+        background: tema($bg);
+    }
+}
+
+.header-gifos {
+    width: 100%;
+    height: 95px;
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 22px 1fr 10fr 1fr 22px;
+    grid-template-rows: 95px auto;
+    grid-template-areas: ". logo . burger .""menu menu menu menu menu";
+    align-items: center;
+
+
+    z-index: 2;
+
+
+    @include themify($themes) {
+        background-color: tema($bg);
+        border-top: tema($borderTopBottom);
+    }
+}
+
+.logo {
+    grid-area: logo;
+
+    width: 48.8px;
+    height: 48.8px;
+    background: url("../images/logo_mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 48.8px;
+    cursor: pointer;
+
+    .logotitle {
+        position: relative;
+        top: 17px;
+        left: 4px;
+        cursor: pointer;
+
+        p {
+            font-family: 'Roboto';
+            font-weight: 900;
+            font-size: 16px;
+
+            @include themify($themes) {
+                color: tema($text);
+            }
+        }
+    }
+}
+
+.menuburger {
+    width: 15px;
+    height: 15px;
+    grid-area: burger;
+    justify-self: end;
+
+    @include themify($themes) {
+        background: tema($burger);
+        background-repeat: no-repeat;
+        background-size: 15px;
+    }
+
+    cursor: pointer;
+
+}
+
+.menuClose {
+    @include themify($themes) {
+        background: tema($burgerClose);
+        background-repeat: no-repeat;
+        background-size: 15px;
+    }
+}
+
+.nav-gifos {
+    display: none;
+    grid-area: menu;
+    z-index: 1;
+
+    .ul-gifos {
+
+        display: flex;
+        flex-flow: column wrap;
+        //grid-template-columns: 1fr;
+        height: 100vh; //calc(80vh-44px);
+        padding-left: 16px;
+        //align-content: space-around;
+
+        align-items: center;
+
+        @include themify($themes) {
+            background: tema($bgmenu);
+        }
+
+        .li-gifos {
+            margin-top: 25px;
+            height: 30px;
+
+            a {
+
+                color: white;
+            }
+        }
+
+
+    }
+}
+
+#li-gifos-3 {
+    display: none;
+}
+
+
+
+.stg-container-img {
+    display: flex;
+    flex-flow: column-reverse;
+
+}
+
+.imgHover {
+
+    opacity: 0.7;
+    //z-index: 3;
+    background: #572EE5;
+}
+
+.main-gifos {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.gifos-header {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#imgIlustra {
+    width: 273px;
+    height: 130px;
+}
+
+.searchgifos {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+
+    #sg-h3 {
+        margin-top: 44px;
+    }
+    
+    //ul-autocomplete
+
+    .sg-parrafo {
+        align-self: center;
+        width: 225px;
+        text-align: center;
+
+        a{
+            line-height: 25px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+
+    
+   
+}
+
+.sg-container-search {
+    //padding: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "lupa search searchLupa"
+        "linea linea linea"
+        "autocomplete autocomplete autocomplete";
+    justify-content: center;
+    align-items: center;
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center; */
+    width: 334px;
+
+    border-radius: 27px;
+
+    @include themify($themes) {
+        background: tema($bg);
+        border: tema($border);
+    }
+}
+.sg-line-search {
+    grid-area: linea;
+    justify-self: center;
+    width: 320px;
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+}
+#imgsearch-1 {
+    grid-area: lupa;
+    margin-left: 10px;    
+}
+
+#imgsearch-lupa {
+    grid-area: searchLupa;
+    margin-right: 10px;    
+    cursor: pointer;
+    @include themify($themes) {
+        content: tema($searchLupa);
+    }
+}
+
+
+
+
+.gifos-header-search {
+    grid-area: search;
+    padding: 15px 64px 13px 25px;
+    width: 234px;
+    justify-self: center;
+
+    //order-radius: 27px;
+    @include themify($themes) {
+        background: tema($bg);
+    }
+
+    //border: 1px solid $bgcolorligth;
+}
+.ul-autocomplete {
+    grid-area: autocomplete;
+    width: 334px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    .li-autocomplete {
+        .a-autocomplete {
+            display: flex;
+            flex-flow: row-reverse wrap;
+            font-family: 'Roboto';
+            font-weight: 400px;
+            font-size: 16px;
+            color: #9CAFC3;
+            padding: 10px;
+
+            #imgsearch {
+                margin-right: 25px;
+            }
+
+        }
+    }
+}
+
+#stg-title {
+    margin-bottom: 38px;
+}
+.sg-line {
+    align-self: center;
+    margin: 35px 0px 43px 0px;
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+    width: 320px;
+}
+
+
+
+.btn-principal {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: white;
+    /* @include themify($themes){
+        background: tema($bg);
+    } */
+    //margin-top: 10px;
+    //z-index: 4;
+}
+
+.btn-favorite,
+.btn-download,
+.btn-open,
+.btn-delete,
+.btn-copy-url {
+
+    margin-right: 11px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-image: url(../images/icon-trash-normal.svg);
+}
+
+
+.btn-copy-url {
+    background-image: url(../images/icon-link.svg);
+}
+.btn-favorite {
+    background-image: url(../images/icon-fav.svg);
+}
+
+.btn-favorite-hover {
+    background-image: url(../images/icon-fav-hover.svg);
+}
+
+
+.btnactive {
+    background-image: url(../images/icon-fav-active.svg);
+}
+
+.btn-download {
+    background-image: url(../images/icon-download.svg);
+}
+
+.btn-open {
+    background-image: url(../images/icon-max.svg);
+}
+
+.img-notfound {
+    margin: 54px 0px 136px 0px;
+    width: 431px;
+
+    p {
+        margin-top: 30px;
+        font-size: 22px;
+        color: #50E3C2;
+        text-align: center;
+        line-height: 25px;
+    }
+}
+
+.search-trending-gifos {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+
+    .stg-grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 21px;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+
+        .stg-container-img {
+            width: 156px;
+            height: 120px;
+
+            img {
+                width: 156px;
+                height: 120px;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+.sec-tgs {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    #h3-tgs {
+        margin: 44px 0px 9px 0px;
+        font-size: 25px;
+    }
+
+    @include themify($themes) {
+        background: tema($bgTrending);
+    }
+
+    .p-tgs {
+        align-self: center;
+        width: 220px;
+        font-family: 'Roboto';
+
+        @include themify($themes) {
+            color: tema($textModal);
+        }
+
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 23px;
+    }
+
+    .div-tgs {
+        width: 100%;
+        margin: 32px 0px 82px 0px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 187px;
+        grid-template-areas: "gallery";
+        justify-content: center;
+        align-items: center;
+        grid-gap: 22px;
+
+        .btnprev,
+        .btnnext {
+            display: none;
+        }
+
+        .div-gallery {
+            grid-area: gallery;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            height: 187px;
+            width: 353px;
+        }
+
+        .ul-slider {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            display: flex;
+            position: absolute;
+            left: 0;
+            transition: all 1s ease;
+        }
+
+        .li-slider {
+            min-width: 243px;
+            height: 187px;
+            margin-right: 22px;
+
+            .stg-container-img {
+                width: 243px;
+                height: 187px;
+
+                img {
+                    width: 243px;
+                    height: 187px;
+                }
+
+            }
+
+
+        }
+
+        /*    .li-slider {
+            display: inline-block;
+        }
+ */
+    }
+}
+
+.stg-btnvermas {
+    margin: 78px 0px 79px 0px;
+}
+
+#stg-btnvermas-favorites {
+    display: flex;
+    justify-content: center;
+
+    #ul-btn-pag {
+        display: flex;
+        width: 320px;
+        align-items: center;
+        justify-content: space-between;
+
+        .item-btn-pag {
+            width: 32px;
+            height: 32px;
+            font-size: 18px;
+            font-family: 'Roboto';
+            font-weight: 500;
+            color: #9CAFC3;
+            text-align: center;
+            border-radius: 100%;
+        }
+
+    }
+
+}
+
+footer {
+    @include themify($themes) {
+        border-bottom: tema($borderTopBottom);
+    }
+
+    height: 196px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:"redsocial""copy";
+
+    /*    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  */
+    .pcopy,
+    .pcompartir {
+
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 13px;
+
+        @include themify($themes) {
+            color: tema($textModal);
+        }
+
+        letter-spacing: 0;
+    }
+
+    .pcopy {
+        grid-area: copy;
+        margin-bottom: 28px;
+    }
+
+    .redsocial {
+        margin: 47px 0px 47.8px 0px;
+        grid-area: redsocial;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        .subredsocial {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    #idface,
+    #idtwitter,
+    #idinstagram {
+        cursor: pointer;
+    }
+
+    #idface {
+        @include themify($themes) {
+            margin: 0px 19px 0px 19px;
+            background-image: tema($facebook);
+
+            &:hover {
+                content: url('images/icon_facebook_hover.svg');
+            }
+        }
+
+    }
+
+    #idtwitter {
+        @include themify($themes) {
+            margin-right: 19px;
+            background-image: tema($twitter);
+
+            &:hover {
+                content: url('images/icon-twitter-hover.svg');
+            }
+        }
+    }
+
+    #idinstagram {
+        @include themify($themes) {
+            margin-right: 19px;
+            background-image: tema($instagram);
+
+            &:hover {
+                content: url('images/icon_instagram-hover.svg');
+            }
+        }
+    }
+
+}
+
+
+div[data-stgcont-btns='imgGridbtn'],
+div[data-stgcont-btns='gallerybtn'] {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 45px);
+    grid-template-rows: 45px 1fr 18px 45px;
+    grid-template-areas: ". favdel download open"". . . ."" username username username username""title title title title";
+    align-content: center;
+    grid-row-gap: 10px;
+    z-index: 3;
+    width: 100%;
+
+    .btn-favorite,
+    .btn-download,
+    .btn-open,
+    .btn-delete {
+        border: 1px solid #CED7E1;
+    }
+
+    .btn-favorite,
+    .btn-delete {
+        margin-top: 10px;
+        grid-area: favdel;
+    }
+
+    .btn-download {
+        margin-top: 10px;
+        grid-area: download;
+    }
+
+    .btn-open {
+        margin-top: 10px;
+        margin-right: 10px;
+        grid-area: open;
+    }
+
+    .p-username,
+    .p-title {
+        margin-left: 13px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        text-align: unset;
+        /* @include themify($themes) {
+            color: tema($text);
+        } */
+    }
+
+
+    .p-username {
+        grid-area: username;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .p-title {
+        margin-bottom: 15px;
+        grid-area: title;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
+.btn {
+
+    @include themify($themes) {
+        background: tema($bg);
+        color: tema($text);
+    }
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+
+
+#btnprev,
+#btnnext {
+    @include themify($themes) {
+        border: tema($border);
+    }
+
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-family: 'Roboto';
+
+    &:hover {
+        @include themify($themes) {
+            background: tema($hover);
+            color: tema($textBtn);
+        }
+
+    }
+}
+
+.btnvermas {
+    width: 127px;
+    height: 50px;
+
+    @include themify($themes) {
+        background-color: tema($bg);
+        color: tema($text);
+        border: tema($border);
+    }
+
+    border-radius: 25px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0;
+
+    &:hover {
+        @include themify($themes) {
+            background: tema($hover);
+            color: tema($textBtn);
+        }
+    }
+}
+
+.btnvideo {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 500;
+
+    text-align: center;
+    border-radius: 100%;
+
+    @include themify($themes) {
+        border: tema($border);
+        color: tema($text);
+    }
+}
+
+.actives {
+    @include themify($themes) {
+        background: tema($hover);
+        color: tema($textBtn);
+        //color:white;
+    }
+}
+
+.navActives {
+    color: #9CAFC3;
+}
